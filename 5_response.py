@@ -1,11 +1,12 @@
 from flask import Flask, json, Response
 app = Flask(__name__)
 
-@app.route('/hello', methods = ['GET'])
+
+@app.route('/hello', methods=['GET'])
 def api_hello():
     data = {
-        'hello'  : 'world',
-        'number' : 3
+        'hello': 'world',
+        'number': 3
     }
     js = json.dumps(data)
 
@@ -13,6 +14,7 @@ def api_hello():
     resp.headers['Link'] = 'http://flaskIntro.com/response'
 
     return resp
+
 
 if __name__ == '__main__':
     app.run()
